@@ -1,0 +1,18 @@
+{
+  "project_intro": "基于 Go 实现的生物样本交接与冻存追踪 Web 项目，一款后端服务，完成样本接收、状态流转、交接受理、协议复核与审计追踪。",
+  "mode": "service",
+  "start": "go run ./cmd/server",
+  "workdir": ".",
+  "env": {
+    "PORT": "28080",
+    "DATABASE_URL": "postgres://biosample:biosample_dev_password@127.0.0.1:29543/biosample_custody?sslmode=disable",
+    "REDIS_ADDR": "127.0.0.1:29637",
+    "MINIO_ENDPOINT": "127.0.0.1:29000",
+    "MINIO_ACCESS_KEY": "biosample-admin",
+    "MINIO_SECRET_KEY": "biosample-minio-password",
+    "JWT_SECRET": "local-development-secret-change-me"
+  },
+  "ready_url": "http://127.0.0.1:28080/healthz",
+  "ready_status": [200],
+  "startup_timeout": 30
+}
